@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "SEED CLEAR DB"
+Article.destroy_all
+puts "SEED START..."
+12.times do
+  Article.create(title: Faker::Book.title, content: Faker::Lorem.paragraph)
+end
+puts "... END SEED"
